@@ -11,8 +11,6 @@ yargs
             describe: 'Whether or not to set stdout and stderr to be blocking before the command runs.'
         })
     }, async function (args) {
-        console.log(process.stdout._handle.blocking);
-
         // If setBlocking(true) is called within the script, no truncation happens regardless of piping.
         if (args.blocking) {
             process.stdout._handle.setBlocking(true);
